@@ -1,9 +1,6 @@
-<script context="module">
-    let current;
-</script>
 
 
-<script context="module">
+<script>
     let w;
     let h;
 </script>
