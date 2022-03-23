@@ -1,4 +1,9 @@
-<script>
+<script context="module">
+    let current;
+</script>
+
+
+<script context="module">
     let w;
     let h;
 </script>

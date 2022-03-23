@@ -2,11 +2,20 @@
     //   import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
       import Tabs from './shared/Tabs.svelte'
       import Drawer from 'svelte-drawer-component';
-      const modules = import.meta.glob('./lib/components/*.svelte')
+      const modules = import.meta.glob('./pages/*.svelte')
     
     let tabitems = ["tab one", "tab two", "tab tljhf", "tabkfdsjhsf", "jkahf", "falkjshfkjsahfkh"]
     let activeitem = "tab one"
     let open = false;
+
+    // console.log(modules)
+    for (const path in modules) {
+        modules[path]().then((mod) => {
+    console.log(path, mod)
+  })
+}
+
+
 </script>
 <style>
     .drawerbutton{
@@ -25,11 +34,11 @@
 
 <Drawer { open } size='10em'>
     <button on:click={() => open = false} class="drawerbutton">CLOSE</button>
-    <Tabs {tabitems} {activeitem}></Tabs>
+    <!-- <Tabs {tabitems} {activeitem}></Tabs> -->
 </Drawer>
 
 
-<!-- <Nested/> -->
+
 
 
 
