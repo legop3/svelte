@@ -1,12 +1,35 @@
 <script>
     //   import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
-      import Nested from './nested.svelte';
+      import Tabs from './shared/Tabs.svelte'
+      import Drawer from 'svelte-drawer-component';
+      const modules = import.meta.glob('./lib/components/*.svelte')
     
-    let tabitems = ["tab one", "tab two"]
+    let tabitems = ["tab one", "tab two", "tab tljhf", "tabkfdsjhsf", "jkahf", "falkjshfkjsahfkh"]
+    let activeitem = "tab one"
+    let open = false;
 </script>
 <style>
+    .drawerbutton{
+        width: 100%;
+        height: 4em;
+    }
 </style>
 
+
+<main>
+ 
+</main>
+
+
+<button on:click={() => open = true}>MENU</button>
+
+<Drawer { open } size='10em'>
+    <button on:click={() => open = false} class="drawerbutton">CLOSE</button>
+    <Tabs {tabitems} {activeitem}></Tabs>
+</Drawer>
+
+
+<!-- <Nested/> -->
 
 
 
