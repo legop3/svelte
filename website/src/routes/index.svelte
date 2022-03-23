@@ -1,6 +1,7 @@
 <script>
       import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
       import Nested from './nested.svelte';
+
 </script>
 <style>
     :global(.svelte-tabs div.svelte-tabs__tab-panel) {
@@ -16,7 +17,12 @@
     :global(.svelte-tabs){
         /* background-color: black; */
     }
+
 </style>
+
+
+
+
 
 <Tabs>
     <TabList>
