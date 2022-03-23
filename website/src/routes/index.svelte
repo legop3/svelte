@@ -1,30 +1,17 @@
 <script>
-      import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
+    //   import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
       import Nested from './nested.svelte';
-
+    
+    let tabitems = ["tab one", "tab two"]
 </script>
 <style>
-    :global(.svelte-tabs div.svelte-tabs__tab-panel) {
-        /* background-color: black; */
-    } 
-
-    :global(.svelte-tabs li.svelte-tabs__tab){
-        /* background-color: black; */
-    }
-    :global(.svelte-tabs li.svelte-tabs__selected){
-        /* background-color: black; */
-    }
-    :global(.svelte-tabs){
-        /* background-color: black; */
-    }
-
 </style>
 
 
 
 
 
-<Tabs>
+<!-- <Tabs>
     <TabList>
         <Tab>one</Tab>
         <Tab>two</Tab>
@@ -45,4 +32,4 @@
         <h1>tab three</h1>
     </TabPanel>
 
-</Tabs>
+</Tabs> -->
