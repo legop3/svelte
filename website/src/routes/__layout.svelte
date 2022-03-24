@@ -7,26 +7,28 @@
 
 <script>
     import Drawer from 'svelte-drawer-component';
+
     
     import {goto} from '$app/navigation';
 
     let open = false;
-    let buttontext = 'Open Drawer'
+    // let buttontext = 'Open Drawer'
 
-    function drawerbutton() {
-        if(open === false) {
-            open = true
-            buttontext = 'Close Drawer'
-        } else {
-            open = false
-            buttontext = 'Open Drawer'
-        }
-    }
+    // function drawerbutton() {
+    //     if(open === false) {
+    //         open = true
+    //         buttontext = 'Close Drawer'
+    //     } else {
+    //         open = false
+    //         buttontext = 'Open Drawer'
+    //     }
+    // }
+
+
 </script>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 
@@ -34,7 +36,7 @@
 
 <!-- svelte-ignore a11y-missing-attribute -->
 <html>
-<button class="drawerbutton" on:click={drawerbutton}>{buttontext}</button>
+<button class="drawerbutton" on:click={() => open = true}>=</button>
 <!-- <button class="drawerbutton" on:click={() => open = true}>Open drawer</button> -->
 
 <div class="drawer" on:load="{() => goto('/shared/home')}">
@@ -42,7 +44,7 @@
         <button class="tablink" style="background-color: blueviolet;" on:click={() => goto('/shared/home')}>Homepage</button>
 
         {#each fileNames as fileName}
-        <button class="tablink" on:click={() => goto(`/${fileName!=='index'?fileName:''}`)}>{fileName}</button>
+            <button class="tablink" on:click={() => goto(`/${fileName!=='index'?fileName:''}`)}>{fileName}</button>
 
         {/each}
 
@@ -58,12 +60,14 @@
         display: flex;
         padding: 0%;
         margin: 0%;
+        background-color: rgb(0, 0, 0);
+        color: white;
     }
 
     /* Style tab links */
     .tablink {
-        background-color: rgb(0, 72, 255);
-        color: rgb(0, 0, 0);
+        background-color: rgb(58, 104, 255);
+        color: rgb(253, 253, 253);
         float:right;
         border: white;
         align-self:stretch;
@@ -73,28 +77,35 @@
         font-weight: bold;
         /* width: 10%; */
         margin: 0.5%;
-        border-radius: 10%;
+        /* border-radius: 10%; */
         
     }
 
     .tablink:hover {
-        background-color: rgb(150, 72, 0);
+        background-color: rgb(0, 40, 150);
     }
 
     .drawerbutton {
         position:fixed;
         right: 3%;
         bottom: 3%;
-        background-color: cyan;
-        padding: 2% 2%;
+        background-color: rgb(0, 255, 145);
+        padding: 2% 4%;
         border: 3px black;
-        /* border-radius: 10%; */
-        z-index: 100;
+        /* border-radius: 100%; */
+        z-index: 90;
+        font-size: larger;
         
+    }
+
+    .drawerbutton:hover {
+        background-color: rgb(0, 167, 95);
     }
 
   .drawer :global(.drawer .panel) {
     background:rgba(67, 67, 67, 0.857);
+    z-index: 101;
+    /* scrollbar-width: 5%; */
     /* border-radius: 10%; */
 }
 
