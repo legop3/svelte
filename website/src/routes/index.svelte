@@ -1,60 +1,31 @@
-<script context="module">
-    //   import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
-    //   import Tabs from './shared/Tabs.svelte'
-      import Drawer from 'svelte-drawer-component';
-// import About from 'src/pages/about.svelte';
-// import Nested from 'src/pages/nested.svelte';
-      const modules = import.meta.glob("../pages/*.svelte")
-    
-    let tabitems = ["tab one", "tab two", "tab tljhf", "tabkfdsjhsf", "jkahf", "falkjshfkjsahfkh"]
-    let activeitem = "tab one"
-    let open = false;
-    let placement = "bottom";
-    let page
-
-    console.log(modules)
-//     for (const path in modules) {
-//         modules[path]().then((mod) => {
-//     console.log(path, mod)
-//     console.log(path)
-//     console.log(mod)
-//   })
-// }
-
-// for (let path in modules) {
-//     console.log(path)
-//     page = modules[path]
-//     console.log(page)
-// }
 
 
-
-</script>
-<style>
+<!-- <style>
     .drawerbutton{
         width: 10%;
-        height: 100%;
+        height: 60%;
     }
-</style>
+</style> -->
 
 <!-- <"../pages/nested"/> -->
-<main>
+<!-- <main>
  
-</main>
+</main> -->
 
 
 <!-- <svelte:component this={"../pages/nested.svelte"}/> -->
 
 
-<button on:click={() => open = true}>MENU</button>
+<!-- <button on:click={() => open = true}>MENU</button> -->
 
-<Drawer { open } { placement }  size='10em'>
+<!-- <Drawer { open } { placement }  size='10em'>
     <button on:click={() => open = false} class="drawerbutton">CLOSE</button>
-    <!-- <Tabs {tabitems} {activeitem}></Tabs> -->
+
+    <Tabs tabitems = {fileNames}></Tabs>
 </Drawer>
 
 
-
+ -->
 
 
 
@@ -80,3 +51,37 @@
     </TabPanel>
 
 </Tabs> -->
+
+
+
+
+
+
+
+<!-- ////////////////////////////////////////////////// -->
+
+<style>
+    /* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: block;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+</style>
+
+
+<!-- <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button> -->
+<!-- <button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button> -->
+<!-- <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button> -->
+<!-- <button class="tablink" onclick="openPage('About', this, 'orange')">About</button> -->
