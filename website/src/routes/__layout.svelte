@@ -11,6 +11,17 @@
     import {goto} from '$app/navigation';
 
     let open = false;
+    let buttontext = 'Open Drawer'
+
+    function drawerbutton() {
+        if(open === false) {
+            open = true
+            buttontext = 'Close Drawer'
+        } else {
+            open = false
+            buttontext = 'Open Drawer'
+        }
+    }
 </script>
 
 <head>
@@ -23,13 +34,18 @@
 
 <!-- svelte-ignore a11y-missing-attribute -->
 <html>
-<button class="drawerbutton" on:click={() => open = true}>Open drawer</button>
+<button class="drawerbutton" on:click={drawerbutton}>{buttontext}</button>
+<!-- <button class="drawerbutton" on:click={() => open = true}>Open drawer</button> -->
 
-<div class="drawer">
+<div class="drawer" on:load="{() => goto('/shared/home')}">
     <Drawer {open} size="50%" placement="bottom" on:clickAway={() => open = false}>
+        <button class="tablink" style="background-color: blueviolet;" on:click={() => goto('/shared/home')}>Homepage</button>
+
         {#each fileNames as fileName}
-            <button class="tablink" on:click={() => goto(`/${fileName!=='index'?fileName:''}`)}>{fileName}</button>
+        <button class="tablink" on:click={() => goto(`/${fileName!=='index'?fileName:''}`)}>{fileName}</button>
+
         {/each}
+
         <!-- <button class="drawerbutton" on:click={() => open = false}>Close Drawer</button> -->
         <!-- <p style="color: white; position:fixed; right:10%; z-index:10">test</p> -->
     </Drawer>
@@ -46,7 +62,7 @@
 
     /* Style tab links */
     .tablink {
-        background-color: rgb(20, 54, 138);
+        background-color: rgb(0, 72, 255);
         color: rgb(0, 0, 0);
         float:right;
         border: white;
@@ -56,7 +72,8 @@
         font-size: 17px;
         font-weight: bold;
         /* width: 10%; */
-
+        margin: 0.5%;
+        border-radius: 10%;
         
     }
 
@@ -72,6 +89,7 @@
         padding: 2% 2%;
         border: 3px black;
         /* border-radius: 10%; */
+        z-index: 100;
         
     }
 
