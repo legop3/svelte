@@ -22,4 +22,5 @@
     <p style="text-indent: 1em; font-style: italic;">"he made a telling observation about Hugh"</p>
     <br><br>
     <p>Observation is a powerful skill. It allows you to take in your surroundings and decide things based on what you see. This skill is very useful in support situations, whether it's supporting people, supporting products, or supporting anything else, Observation is a great superpower to have.</p>
+    <p>In the past, Observation was used to keep track of history before we had means of measuring and archiving everything, and it still has much of the same purpose today.</p>
 </div>
