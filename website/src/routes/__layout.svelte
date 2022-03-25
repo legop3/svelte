@@ -80,7 +80,7 @@ import { browser } from '$app/env';
         font-weight: bold;
         /* width: 10%; */
         margin: 0.5%;
-        /* border-radius: 10%; */
+        border-radius: 10px;
         
     }    .tablink-home {
         background-color: rgb(255, 174, 0);
@@ -94,7 +94,7 @@ import { browser } from '$app/env';
         font-weight: bold;
         /* width: 10%; */
         margin: 0.5%;
-        /* border-radius: 10%; */
+        border-radius: 10px;
         
     }
 
@@ -111,9 +111,9 @@ import { browser } from '$app/env';
         right: 3%;
         bottom: 3%;
         background-color: rgb(255, 145, 0);
-        padding: 2% 4%;
+        padding: 1% 1%;
         border: 3px black;
-        /* border-radius: 100%; */
+        border-radius: 100px;
         z-index: 90;
         font-size: larger;
         
