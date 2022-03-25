@@ -11,7 +11,7 @@
 
     
     import {goto} from '$app/navigation';
-
+    import { onMount } from 'svelte';
 
 
     let open = false;
@@ -30,7 +30,9 @@
         // $: if(browser) {
         //     goto("../shared/home")
         // }
-
+    // onMount(() => {
+    //     goto("../shared/home")
+    // })
 
 </script>
 
