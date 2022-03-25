@@ -3,7 +3,7 @@
 <script context="module">
     const modules = import.meta.glob("./*.svelte");
     const fileNames = Object.keys(modules).map(path => path.split('/').pop().split('.')[0]);
-    goto("../shared/home")
+    // goto("../shared/home")
 </script>
 
 <script>
@@ -11,7 +11,8 @@
 
     
     import {goto} from '$app/navigation';
-import { browser } from '$app/env';
+    import { onMount } from 'svelte';
+
 
     let open = false;
     // let buttontext = 'Open Drawer'
@@ -29,6 +30,10 @@ import { browser } from '$app/env';
         // $: if(browser) {
         //     goto("../shared/home")
         // }
+    onMount(() => {
+        goto("../shared/home")
+    })
+
 </script>
 
 <head>
