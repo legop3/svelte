@@ -10,6 +10,7 @@
 
     
     import {goto} from '$app/navigation';
+import { browser } from '$app/env';
 
     let open = false;
     // let buttontext = 'Open Drawer'
@@ -24,7 +25,9 @@
     //     }
     // }
 
-
+        $: if(browser) {
+            goto("../shared/home")
+        }
 </script>
 
 <head>
@@ -36,12 +39,12 @@
 
 <!-- svelte-ignore a11y-missing-attribute -->
 <html>
-<button class="drawerbutton" on:click={() => open = true}>=</button>
+<button class="drawerbutton" on:click={() => open = true}>MENU</button>
 <!-- <button class="drawerbutton" on:click={() => open = true}>Open drawer</button> -->
 
 <div class="drawer" on:load="{() => goto('/shared/home')}">
     <Drawer {open} size="50%" placement="bottom" on:clickAway={() => open = false}>
-        <button class="tablink" style="background-color: blueviolet;" on:click={() => goto('/shared/home')}>Homepage</button>
+        <button class="tablink-home" on:click={() => goto('/shared/home')}>Homepage</button>
 
         {#each fileNames as fileName}
             <button class="tablink" on:click={() => goto(`/${fileName!=='index'?fileName:''}`)}>{fileName}</button>
@@ -66,8 +69,22 @@
 
     /* Style tab links */
     .tablink {
-        background-color: rgb(58, 104, 255);
-        color: rgb(253, 253, 253);
+        background-color: rgb(255, 238, 0);
+        color: rgb(0, 0, 0);
+        float:right;
+        border: white;
+        align-self:stretch;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        font-weight: bold;
+        /* width: 10%; */
+        margin: 0.5%;
+        /* border-radius: 10%; */
+        
+    }    .tablink-home {
+        background-color: rgb(255, 174, 0);
+        color: rgb(0, 0, 0);
         float:right;
         border: white;
         align-self:stretch;
@@ -82,14 +99,18 @@
     }
 
     .tablink:hover {
-        background-color: rgb(0, 40, 150);
+        background-color: rgb(206, 192, 0);
+    }
+    .tablink-home:hover {
+        background-color: rgb(187, 128, 0);
+
     }
 
     .drawerbutton {
         position:fixed;
         right: 3%;
         bottom: 3%;
-        background-color: rgb(0, 255, 145);
+        background-color: rgb(255, 145, 0);
         padding: 2% 4%;
         border: 3px black;
         /* border-radius: 100%; */
@@ -99,12 +120,13 @@
     }
 
     .drawerbutton:hover {
-        background-color: rgb(0, 167, 95);
+        background-color: rgb(182, 103, 0);
     }
 
+
   .drawer :global(.drawer .panel) {
-    background:rgba(67, 67, 67, 0.857);
-    z-index: 101;
+    background:rgba(255, 132, 0, 0.227);
+        z-index: 101;
     /* scrollbar-width: 5%; */
     /* border-radius: 10%; */
 }
