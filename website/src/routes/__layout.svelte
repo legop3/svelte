@@ -2,7 +2,8 @@
 
 <script context="module">
     const modules = import.meta.glob("./*.svelte");
-    const fileNames = Object.keys(modules).map(path => path.split('/').pop().split('.')[0]);      
+    const fileNames = Object.keys(modules).map(path => path.split('/').pop().split('.')[0]);
+    goto("../shared/home")
 </script>
 
 <script>
@@ -25,9 +26,9 @@ import { browser } from '$app/env';
     //     }
     // }
 
-        $: if(browser) {
-            goto("../shared/home")
-        }
+        // $: if(browser) {
+        //     goto("../shared/home")
+        // }
 </script>
 
 <head>
