@@ -30,9 +30,9 @@
         // $: if(browser) {
         //     goto("../shared/home")
         // }
-    // onMount(() => {
-    //     goto("../shared/home")
-    // })
+    onMount(() => {
+        goto("../shared/home")
+    })
 
 </script>
 
