@@ -21,5 +21,4 @@
     <p style="text-indent: 1em; font-style: italic;">"he made a telling observation about Hugh"</p>
     <br><br>
     <p>Observation is a good skill to have, it allows one to take in everything around themselves and apply this information to the problem they are solving. </p>
-    <p>Observation can also be defined as spatial awareness, where one is aware of their surroundings even if they are not directly interacting with everything around them.</p>
 </div>
