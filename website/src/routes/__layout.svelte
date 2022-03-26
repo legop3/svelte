@@ -4,14 +4,15 @@
     const modules = import.meta.glob("./*.svelte");
     const fileNames = Object.keys(modules).map(path => path.split('/').pop().split('.')[0]);
     // goto("../shared/home")
+    
 </script>
 
 <script>
     import Drawer from 'svelte-drawer-component';
-
-    
     import {goto} from '$app/navigation';
     import { onMount } from 'svelte';
+
+
 
 
     let open = false;
@@ -131,7 +132,7 @@
 
 
   .drawer :global(.drawer .panel) {
-    background:rgba(255, 132, 0, 0.227);
+    background:rgba(255, 145, 0, 0.042);
         z-index: 101;
     /* scrollbar-width: 5%; */
     /* border-radius: 10%; */
